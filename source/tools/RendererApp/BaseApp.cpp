@@ -28,7 +28,7 @@ int BaseApp::init()
         windowWidth, windowHeight,
         SDL_WINDOW_SHOWN
         // clang-format on
-        );
+    );
     if (!mainWindow) {
         SDL_LogError(SDL_LOG_CATEGORY_ERROR, "Error creating window: %s\n", SDL_GetError());
         return -1;
