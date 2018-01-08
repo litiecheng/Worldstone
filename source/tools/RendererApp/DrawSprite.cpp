@@ -217,4 +217,4 @@ bool draw(int width, int height)
     bgfx::submit(0, m_program);
     return true;
 }
-};
+}

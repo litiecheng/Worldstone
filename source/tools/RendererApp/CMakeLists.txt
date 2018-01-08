@@ -18,20 +18,23 @@ add_subdirectory(imgui)
 set(RendererAppWorkDir ${CMAKE_CURRENT_LIST_DIR}/workingDirectory)
 set(ShaderBinariesDir ${RendererAppWorkDir}/shaders)
 
-set(SRC_LIST main.cpp BaseApp.cpp RendererApp.cpp 
+set(SRC_LIST
+    main.cpp
+    BaseApp.cpp
+    RendererApp.cpp
     bgfxUtils.cpp
-    DrawCube.cpp
     DrawSprite.cpp
 )
-set(HDR_LIST main.h BaseApp.h RendererApp.h Inputs.h
+set(HDR_LIST
+    main.h
+    BaseApp.h
+    RendererApp.h
+    Inputs.h
     bgfxUtils.h
-    DrawCubes.h
     DrawSprite.h
 )
 
-set(SHADERS_LIST 
-    shaders/vs_cubes.sc
-    shaders/fs_cubes.sc
+set(SHADERS_LIST
     shaders/vs_sprite.sc
     shaders/fs_sprite.sc
 )

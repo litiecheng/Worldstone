@@ -1,7 +1,6 @@
 #include "RendererApp.h"
 #include <bgfx/bgfx.h>
 #include "imgui/imgui_bgfx.h"
-#include "DrawCubes.h"
 #include "DrawSprite.h"
 #include <dcc.h>
 #include <FileStream.h>
@@ -11,7 +10,6 @@ bool RendererApp::initAppThread()
     if (!BaseApp::initAppThread()) return false;
 
     imguiCreate(imguiAllocator);
-    ExampleCubes::init();
     using WorldStone::DCC;
     DCC testDCC;
     testDCC.initDecoder(std::make_unique<WorldStone::FileStream>("sprites/CRHDBRVDTHTH.dcc"));
@@ -30,7 +28,6 @@ bool RendererApp::initAppThread()
 void RendererApp::shutdownAppThread()
 {
     DrawSprite::shutdown();
-    ExampleCubes::shutdown();
     imguiDestroy();
     BaseApp::shutdownAppThread();
 }
@@ -93,7 +90,6 @@ void RendererApp::executeAppLoopOnce()
     bgfx::touch(0);
 
 
-    //ExampleCubes::update(windowWidth, windowHeight);
     DrawSprite::draw(windowWidth, windowHeight);
 
     // Advance to next frame. Rendering thread will be kicked to
