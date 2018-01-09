@@ -88,7 +88,7 @@ install:
       fi
     fi
   - |
-    if [[ "${TRAVIS_OS_NAME}" == "osx" ]]; then
+    if [[ 0 && "${TRAVIS_OS_NAME}" == "osx" ]]; then
       brew update
       brew upgrade cmake && \
       brew install sdl2
