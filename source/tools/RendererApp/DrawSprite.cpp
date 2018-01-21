@@ -27,12 +27,15 @@ struct PosColorTexcoordVertex
             .add(bgfx::Attrib::Color0, 4, bgfx::AttribType::Uint8, true)
             .add(bgfx::Attrib::TexCoord0, 2, bgfx::AttribType::Float)
             .end();
-    };
+    }
 
     static bgfx::VertexDecl ms_decl;
 };
 
+BX_PRAGMA_DIAGNOSTIC_PUSH()
+BX_PRAGMA_DIAGNOSTIC_IGNORED_CLANG_GCC("-Wglobal-constructors")
 bgfx::VertexDecl PosColorTexcoordVertex::ms_decl;
+BX_PRAGMA_DIAGNOSTIC_POP()
 
 /*
       y
@@ -75,14 +78,14 @@ static const uint16_t s_quadTriStrip[] = {
 namespace DrawSprite
 {
 
-bgfx::VertexBufferHandle m_vbh          = BGFX_INVALID_HANDLE;
-bgfx::IndexBufferHandle  m_ibh          = BGFX_INVALID_HANDLE;
-bgfx::ProgramHandle      m_program      = BGFX_INVALID_HANDLE;
-bgfx::UniformHandle      s_texColor     = BGFX_INVALID_HANDLE;
-bgfx::UniformHandle      s_palColor     = BGFX_INVALID_HANDLE;
-bgfx::TextureHandle      m_textureColor = BGFX_INVALID_HANDLE;
-bgfx::TextureHandle      m_paletteColor = BGFX_INVALID_HANDLE;
-int64_t                  m_timeOffset;
+static bgfx::VertexBufferHandle m_vbh          = BGFX_INVALID_HANDLE;
+static bgfx::IndexBufferHandle  m_ibh          = BGFX_INVALID_HANDLE;
+static bgfx::ProgramHandle      m_program      = BGFX_INVALID_HANDLE;
+static bgfx::UniformHandle      s_texColor     = BGFX_INVALID_HANDLE;
+static bgfx::UniformHandle      s_palColor     = BGFX_INVALID_HANDLE;
+static bgfx::TextureHandle      m_textureColor = BGFX_INVALID_HANDLE;
+static bgfx::TextureHandle      m_paletteColor = BGFX_INVALID_HANDLE;
+static int64_t                  m_timeOffset;
 
 void init(const Sprite& sprite)
 {
