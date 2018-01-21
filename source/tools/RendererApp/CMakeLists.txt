@@ -40,9 +40,9 @@ set(SHADERS_LIST
 )
 
 if( MSVC )
-    set( SHADER_PLATFORMS dx11 glsl) #dx9 dx11 glsl )
+    set( SHADER_PLATFORMS dx11 glsl)
 elseif( APPLE )
-    set( SHADER_PLATFORMS metal glsl )
+    set( SHADER_PLATFORMS glsl ) #metal)
 else()
     set( SHADER_PLATFORMS glsl )
 endif()
