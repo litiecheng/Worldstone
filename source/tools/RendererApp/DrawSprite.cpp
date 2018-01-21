@@ -90,7 +90,7 @@ static int64_t                  m_timeOffset;
 void init(const Sprite& sprite)
 {
     BX_UNUSED(s_quadTriList, s_quadTriStrip);
-
+    BX_UNUSED(abgrBlack, abgrWhite, abgrRed, abgrGreen, abgrBlue);
     // Create vertex stream declaration.
     PosColorTexcoordVertex::init();
 
