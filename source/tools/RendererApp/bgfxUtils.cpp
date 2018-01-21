@@ -14,7 +14,7 @@ static const bgfx::Memory* loadMem(bx::FileReaderI* _reader, const char* _filePa
     {
         uint32_t size = (uint32_t)bx::getSize(_reader);
         const bgfx::Memory* mem = bgfx::alloc(size + 1);
-        bx::read(_reader, mem->data, size);
+        bx::read(_reader, mem->data, static_cast<int32_t>(size));
         bx::close(_reader);
         mem->data[mem->size - 1] = '\0';
         return mem;
